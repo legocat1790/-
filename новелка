@@ -1,0 +1,382 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        StartGame();
+    }
+
+    static void StartGame()
+    {
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("Ты стоишь перед входом в колледж");
+            Console.WriteLine("1 - Войти в колледж");
+            Console.WriteLine("2 - Уйти из колледжа");
+            Console.WriteLine("3 - Меню");
+
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                EnterCollege();
+            }
+            else if (choice == "2")
+            {
+                LeaveCollege();
+            }
+            else if (choice == "3")
+            {
+                ShowMenu();
+            }
+            else
+            {
+                Console.WriteLine("Неверный выбор! Нажмите Enter...");
+                Console.ReadLine();
+            }
+        }
+    }
+
+    static void ShowMenu()
+    {
+        Console.Clear();
+        Console.WriteLine("МЕНЮ");
+        Console.WriteLine("1 - Вернуться в начало");
+        Console.WriteLine("2 - Правила игры");
+        Console.WriteLine("3 - Список концовок");
+
+        string menuChoice = Console.ReadLine();
+
+        if (menuChoice == "1")
+        {
+            return;
+        }
+        else if (menuChoice == "2")
+        {
+            Console.WriteLine("Правила: делайте выбор вводя цифры. Старайтесь не быть отчисленным!");
+            Console.WriteLine("Нажмите Enter...");
+            Console.ReadLine();
+        }
+        else if (menuChoice == "3")
+        {
+            Console.WriteLine("10 КОНЦОВОК:");
+            Console.WriteLine("1 - Съеден преподавателем");
+            Console.WriteLine("2 - Успешный студент");
+            Console.WriteLine("3 - Отчисление");
+            Console.WriteLine("4 - Счастливый студент");
+            Console.WriteLine("5 - Везение");
+            Console.WriteLine("6 - Хитрый студент");
+            Console.WriteLine("7 - Командный игрок");
+            Console.WriteLine("8 - Весельчак");
+            Console.WriteLine("9 - Спортсмен");
+            Console.WriteLine("10 - Предприниматель");
+            Console.WriteLine("Нажмите Enter...");
+            Console.ReadLine();
+        }
+    }
+
+    static void EnterCollege()
+    {
+        Console.Clear();
+        Console.WriteLine("ШАГ 1: Ты вошел в колледж");
+        Console.WriteLine("1 - Пойти в туалет");
+        Console.WriteLine("2 - Пойти в кабинет");
+        Console.WriteLine("3 - Пойти в столовую");
+        Console.WriteLine("4 - Вернуться к входу");
+        Console.WriteLine("5 - Меню");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            ToiletPath();
+        }
+        else if (choice == "2")
+        {
+            ClassroomPath();
+        }
+        else if (choice == "3")
+        {
+            CafeteriaPath();
+        }
+        else if (choice == "4")
+        {
+            return;
+        }
+        else if (choice == "5")
+        {
+            ShowMenu();
+            EnterCollege();
+        }
+    }
+
+    static void ToiletPath()
+    {
+        Console.Clear();
+        Console.WriteLine("ШАГ 2: Ты наткнулся на Александра Сергеевича!");
+        Console.WriteLine("1 - Попытаться убежать");
+        Console.WriteLine("2 - Извиниться и поговорить");
+        Console.WriteLine("3 - Сделать вид, что не заметил");
+        Console.WriteLine("4 - Меню");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            Console.Clear();
+            Console.WriteLine("ШАГ 3: Александр Сергеевич догнал тебя!");
+            Console.WriteLine("1 - Придумать оправдание");
+            Console.WriteLine("2 - Попросить прощения");
+            Console.WriteLine("3 - Меню");
+
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.WriteLine("КОНЕЦ 6: ХИТРЫЙ СТУДЕНТ - Твое оправдание сработало!");
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("КОНЕЦ 1: СЪЕДЕН ПРЕПОДАВАТЕЛЕМ");
+            }
+        }
+        else if (choice == "2")
+        {
+            Console.Clear();
+            Console.WriteLine("ШАГ 3: Ты извинился, и он дал дополнительное задание");
+            Console.WriteLine("1 - Выполнить задание одному");
+            Console.WriteLine("2 - Попросить помощи у друзей");
+            Console.WriteLine("3 - Меню");
+
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.WriteLine("КОНЕЦ 2: УСПЕШНЫЙ СТУДЕНТ - Ты справился сам!");
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("КОНЕЦ 7: КОМАНДНЫЙ ИГРОК - Вы справились вместе!");
+            }
+        }
+        else if (choice == "3")
+        {
+            Console.WriteLine("КОНЕЦ 3: ОТЧИСЛЕНИЕ - Тебя выгнали за неуважение!");
+        }
+
+        Console.WriteLine("\nНажмите Enter для продолжения...");
+        Console.ReadLine();
+    }
+
+    static void ClassroomPath()
+    {
+        Console.Clear();
+        Console.WriteLine("ШАГ 2: Ты успешно зашел в кабинет");
+        Console.WriteLine("1 - Сесть на первое место");
+        Console.WriteLine("2 - Сесть на последнее место");
+        Console.WriteLine("3 - Сесть с друзьями");
+        Console.WriteLine("4 - Меню");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            Console.Clear();
+            Console.WriteLine("ШАГ 3: Преподаватель заметил твое усердие!");
+            Console.WriteLine("1 - Активно работать на паре");
+            Console.WriteLine("2 - Сделать вид что работаешь");
+            Console.WriteLine("3 - Меню");
+
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.WriteLine("КОНЕЦ 2: УСПЕШНЫЙ СТУДЕНТ");
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("КОНЕЦ 3: ОТЧИСЛЕНИЕ");
+            }
+        }
+        else if (choice == "2")
+        {
+            Console.Clear();
+            Console.WriteLine("ШАГ 3: Ты спокойно просидел всю пару");
+            Console.WriteLine("1 - Пойти в столовую");
+            Console.WriteLine("2 - Пойти в библиотеку");
+            Console.WriteLine("3 - Пойти в спортзал");
+            Console.WriteLine("4 - Меню");
+
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.WriteLine("КОНЕЦ 4: СЧАСТЛИВЫЙ СТУДЕНТ - В столовой была акция!");
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("КОНЕЦ 5: ВЕЗЕНИЕ - Нашел старую зачетку с пятерками!");
+            }
+            else if (choice == "3")
+            {
+                Console.WriteLine("КОНЕЦ 9: СПОРТСМЕН - Тебя заметил тренер!");
+            }
+        }
+        else if (choice == "3")
+        {
+            Console.WriteLine("КОНЕЦ 8: ВЕСЕЛЬЧАК - Отлично провели время на паре!");
+        }
+
+        Console.WriteLine("\nНажмите Enter для продолжения...");
+        Console.ReadLine();
+    }
+
+    static void CafeteriaPath()
+    {
+        Console.Clear();
+        Console.WriteLine("ШАГ 2: Ты в столовой");
+        Console.WriteLine("1 - Взять обед");
+        Console.WriteLine("2 - Купить кофе и булочку");
+        Console.WriteLine("3 - Продавать свои конспекты");
+        Console.WriteLine("4 - Меню");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            Console.WriteLine("КОНЕЦ 4: СЧАСТЛИВЫЙ СТУДЕНТ - Обед был вкусным!");
+        }
+        else if (choice == "2")
+        {
+            Console.Clear();
+            Console.WriteLine("ШАГ 3: Ты встретил друзей за кофе");
+            Console.WriteLine("1 - Присоединиться к ним");
+            Console.WriteLine("2 - Взять кофе с собой");
+            Console.WriteLine("3 - Меню");
+
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.WriteLine("КОНЕЦ 8: ВЕСЕЛЬЧАК - Отлично пообщались!");
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("КОНЕЦ 2: УСПЕШНЫЙ СТУДЕНТ - Успел на пару!");
+            }
+        }
+        else if (choice == "3")
+        {
+            Console.WriteLine("КОНЕЦ 10: ПРЕДПРИНИМАТЕЛЬ - Заработал на конспектах!");
+        }
+
+        Console.WriteLine("\nНажмите Enter для продолжения...");
+        Console.ReadLine();
+    }
+
+    static void LeaveCollege()
+    {
+        Console.Clear();
+        Console.WriteLine("ШАГ 1: Ты не решил идти в колледж");
+        Console.WriteLine("1 - Пойти в магазин");
+        Console.WriteLine("2 - Пойти домой");
+        Console.WriteLine("3 - Пойти в парк");
+        Console.WriteLine("4 - Вернуться к входу");
+        Console.WriteLine("5 - Меню");
+
+        string choice = Console.ReadLine();
+
+        if (choice == "1")
+        {
+            Console.Clear();
+            Console.WriteLine("ШАГ 2: Там была кураторша!");
+            Console.WriteLine("1 - Спрятаться");
+            Console.WriteLine("2 - Притвориться покупателем");
+            Console.WriteLine("3 - Подойти поздороваться");
+            Console.WriteLine("4 - Меню");
+
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.WriteLine("КОНЕЦ 1: СЪЕДЕН ПРЕПОДАВАТЕЛЕМ");
+            }
+            else if (choice == "2")
+            {
+                Console.Clear();
+                Console.WriteLine("ШАГ 3: Ты успешно обманул кураторшу!");
+                Console.WriteLine("1 - Вернуться в колледж");
+                Console.WriteLine("2 - Продолжить прогулку");
+                Console.WriteLine("3 - Меню");
+
+                choice = Console.ReadLine();
+
+                if (choice == "1")
+                {
+                    Console.WriteLine("КОНЕЦ 4: СЧАСТЛИВЫЙ СТУДЕНТ - Успел на пару!");
+                }
+                else if (choice == "2")
+                {
+                    Console.WriteLine("КОНЕЦ 3: ОТЧИСЛЕНИЕ - Тебя заметил декан!");
+                }
+            }
+            else if (choice == "3")
+            {
+                Console.WriteLine("КОНЕЦ 6: ХИТРЫЙ СТУДЕНТ - Честность помогла!");
+            }
+        }
+        else if (choice == "2")
+        {
+            Console.Clear();
+            Console.WriteLine("ШАГ 2: Ты успешно пошел домой");
+            Console.WriteLine("1 - Сделать уроки");
+            Console.WriteLine("2 - Играть в игры");
+            Console.WriteLine("3 - Начать подрабатывать");
+            Console.WriteLine("4 - Меню");
+
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.WriteLine("КОНЕЦ 2: УСПЕШНЫЙ СТУДЕНТ");
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("КОНЕЦ 3: ОТЧИСЛЕНИЕ");
+            }
+            else if (choice == "3")
+            {
+                Console.WriteLine("КОНЕЦ 10: ПРЕДПРИНИМАТЕЛЬ - Нашел хорошую работу!");
+            }
+        }
+        else if (choice == "3")
+        {
+            Console.Clear();
+            Console.WriteLine("ШАГ 2: В парке ты встретил друзей");
+            Console.WriteLine("1 - Присоединиться к ним");
+            Console.WriteLine("2 - Пойти играть в футбол");
+            Console.WriteLine("3 - Устроить пикник");
+            Console.WriteLine("4 - Меню");
+
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.WriteLine("КОНЕЦ 8: ВЕСЕЛЬЧАК");
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("КОНЕЦ 9: СПОРТСМЕН");
+            }
+            else if (choice == "3")
+            {
+                Console.WriteLine("КОНЕЦ 7: КОМАНДНЫЙ ИГРОК - Отлично организовали пикник!");
+            }
+        }
+
+        Console.WriteLine("\nНажмите Enter для продолжения...");
+        Console.ReadLine();
+    }
+}
