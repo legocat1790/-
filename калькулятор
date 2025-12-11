@@ -1,0 +1,70 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+     
+        
+        Console.Write("Введите первое число: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите второе число: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("\nРезультаты операций:");
+     
+
+        
+        double sum = num1 + num2;
+        Console.WriteLine($"{num1} + {num2} = {sum}");
+
+        
+        double difference = num1 - num2;
+        Console.WriteLine($"{num1} - {num2} = {difference}");
+
+       
+        double product = num1 * num2;
+        Console.WriteLine($"{num1} * {num2} = {product}");
+
+        
+        if (num2 != 0)
+        {
+            double quotient = num1 / num2;
+            Console.WriteLine($"{num1} / {num2} = {quotient}");
+        }
+        else
+        {
+            Console.WriteLine($"{num1} / {num2} = Ошибка: деление на ноль!");
+        }
+
+        
+        if (num2 != 0)
+        {
+            double remainder = num1 % num2;
+            Console.WriteLine($"{num1} % {num2} = {remainder}");
+        }
+        else
+        {
+            Console.WriteLine($"{num1} % {num2} = Ошибка: деление на ноль!");
+        }
+
+        
+        Console.WriteLine("\nИнкремент и декремент:");
+     
+
+        double temp1 = num1;
+        double temp2 = num2;
+
+        Console.WriteLine($"Инкремент первого числа: {temp1}++ = {++temp1}");
+
+        temp1 = num1;
+        Console.WriteLine($"Декремент первого числа: {temp1}-- = {--temp1}");
+
+        Console.WriteLine($"Инкремент второго числа: {temp2}++ = {++temp2}");
+        
+        temp2 = num2; 
+        Console.WriteLine($"Декремент второго числа: {temp2}-- = {--temp2}");
+        Console.ReadKey();
+    }
+}
